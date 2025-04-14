@@ -1,0 +1,72 @@
+<!-- import alert component -->
+<!-- <app-alert 
+(onBtnClicked)="registerUser()"
+[alertType]="'Succesfully Registered'" 
+[status]="'alert alert-success'" 
+[btnClass]="'btn btn-success'" 
+[btnText]="'Register'">
+</app-alert> -->
+
+<section class="vh-100 bg-image"
+  style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/038/830/156/small_2x/ai-generated-minimalistic-sweet-and-candy-background-concept-with-empty-space-photo.jpg');">
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+
+          <!-- Sign Up Container -->
+          <div class="card" style="border-radius: 15px; background-color: aliceblue;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-2" style="color:darkblue">Sign Up</h2>
+              <!-- Sign Up Form -->
+              <form>
+                <div data-mdb-input-init class="form-outline mb-2">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-md" 
+                  placeholder="Your Name" [(ngModel)]="user.name" [ngModelOptions]="{standalone:true}" />
+                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-2">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-md"
+                  placeholder="Your Email" [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}" />
+                  <label for="" *ngIf="user.email==''">Email required</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-md"
+                  placeholder="Password" [(ngModel)]="user.password" [ngModelOptions]="{standalone:true}" />
+                  <label for="" *ngIf="user.password.length < 7">must be 7 or more characters</label>
+                </div>
+
+                <label class="form-label select-label">Role</label>
+                <!-- Dropdown Menu For Select -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                      <select class="select form-control-"
+                      [(ngModel)]="user.role" [ngModelOptions]="{standalone:true}">
+                        <option selected disabled>Select Role</option>
+                        <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+                      </select>
+                    </div>
+
+                  <!-- display a success message after registered -->
+                  <label id="successMsg" *ngIf="status" style="background-color: aquamarine; color:green">Successfully Registered</label>
+
+                <!-- Register button -->
+                <div class="d-flex justify-content-center">
+                  <button type="submit" data-mdb-button-init
+                    data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                    (click)="registerUser()">Register</button>
+                </div>
+                
+                <!-- click the link to login -->
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? 
+                    <a href="/login" class="fw-bold" style="color:rgb(35, 35, 129)">Login here</a></p>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

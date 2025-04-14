@@ -1,0 +1,76 @@
+<!-- import alert component -->
+<!-- <app-alert 
+(onBtnClicked)="login()"
+[alertType]="'Succesfully Logged in!'" 
+[status]="'alert alert-success'" 
+[btnClass]="'btn btn-success'" 
+[btnText]="'Login'">
+</app-alert> -->
+
+<section class="vh-100 bg-image"
+  style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/038/830/156/small_2x/ai-generated-minimalistic-sweet-and-candy-background-concept-with-empty-space-photo.jpg');">
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+
+          <!-- Login Form Container -->
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-2" style="color:darkblue">Login</h2><br>
+              <!-- Login Form -->
+              <form>
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="email" placeholder="Username" id="username" class="form-control form-control-lg"
+                    [(ngModel)]="auth.username" [ngModelOptions]="{standalone:true}" />
+                    <label class="form-label" for="username">Username as Email</label>
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="password" placeholder="Password" id="password" class="form-control form-control-lg"
+                    [(ngModel)]="auth.password" [ngModelOptions]="{standalone:true}" />
+                    <label class="form-label" for="password">Password</label>
+                  </div>
+
+                   <label class="form-label select-label">Role</label>
+                   <!-- Select Dropdown Menu -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <select class="select form-control-"
+                      [(ngModel)]="auth.role" [ngModelOptions]="{standalone:true}">
+                        <option selected disabled>Select Role</option>
+                        <!-- <option *ngFor="let role of auth.role" [value]="role">{{role}}</option> -->
+                         <option value="ADMIN">ADMIN</option>
+                         <option value="STAFF">STAFF</option>
+                      </select>
+                    </div> 
+                 
+                   <!-- display a success message after logged in -->
+                   <label id="successMsg" *ngIf="status" style="background-color: aquamarine; color:green">Successfully Logged In</label>
+                   
+                  <!-- login button -->
+                  <div class="d-flex justify-content-center">
+                    <button data-mdb-button-init
+                  data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" 
+                  type="submit" (click)="login()">Login</button>
+                  </div><br>
+
+                   <!-- logout button -->
+                   <!-- <div class="d-flex justify-content-center">
+                    <button data-mdb-button-init
+                  data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" 
+                  type="submit" (click)="logout()">Logout</button>
+                  </div> -->
+
+                  <!-- click the link to register for new account -->
+                <div>
+                  <p class="mb-0">Don't have an account? <a href="/register" class="fw-bold" style="color:rgb(35, 35, 129)">Sign Up</a></p>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

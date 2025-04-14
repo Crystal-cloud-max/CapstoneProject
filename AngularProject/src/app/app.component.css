@@ -1,0 +1,21 @@
+nav{
+    /* background:linear-gradient  ( rgb(63, 169, 239)); */
+    background: linear-gradient(to bottom, rgb(63, 169, 239),whitesmoke );
+}
+a:hover,a:active{
+    color:palevioletred;
+}
+a{
+    color:whitesmoke;
+    font-weight: bolder;
+}
+button:hover{
+    background-color: lightgreen;
+}
+nav ul li{
+    font-size: large;
+}
+button{
+    background-color:red;
+    font-weight: bold;
+}

@@ -1,0 +1,107 @@
+
+<section class="vh-100 bg-image"
+  style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/038/830/156/small_2x/ai-generated-minimalistic-sweet-and-candy-background-concept-with-empty-space-photo.jpg');">
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            
+             <!-- after clicking view details button because id index starts at 0 -->
+        @if (supplierId >= 0) {
+            <button data-mdb-button-init
+            data-mdb-ripple-init class=
+            "btn btn-success btn-block btn-sm gradient-custom-4 text-body"
+            (click)="selectSupplier(-1)">Return</button>
+            <!-- call html template -->
+            <app-supplier-info [supplierId]="supplierId"></app-supplier-info>
+          }
+        @else {
+          <!-- display container for details -->
+            <div class="card" style="border-radius: 15px; background-color: aliceblue;">
+            <div class="card-body p-3">
+            <table class="table caption-top" style="border-radius: 10px; background-color: aliceblue;">
+                <thead>
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact Info</th>
+                    <th scope="col">Rating</th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- loop thru each row for the class attributes in each table data -->
+                    @for(supplier of suppliers; track $index){
+                    <tr>
+                        <th>{{$index+1}}</th>
+                        <td>{{supplier.name}}</td>
+                        <td>{{supplier.contactInfo}}</td>
+                        <td>{{supplier.rating}}</td>
+                        <td>
+                            <button data-mdb-button-init
+                            data-mdb-ripple-init class=
+                            "btn btn-success btn-block btn-sm gradient-custom-4 text-body"
+                            (click)="updateSet($index)">Edit</button>
+                            <button data-mdb-button-init
+                            data-mdb-ripple-init class=
+                            "btn btn-success btn-block btn-sm gradient-custom-4 text-body"
+                            (click)="deleteSupplier(supplier.id)" >Delete</button>
+                            <button data-mdb-button-init
+                            data-mdb-ripple-init class=
+                            "btn btn-success btn-block btn-sm gradient-custom-4 text-body"
+                            (click)="selectSupplier(supplier.id)">Get</button>
+
+                            <!-- <a href="/product-details" routerLinkActive="active">Get Details</a> -->
+                        </td>
+                    </tr>
+                } 
+            </tbody>
+            </table>
+            </div>
+            <div class="card" style="border-radius: 15px; background-color: aliceblue;"></div>
+            <div class="card-body p-3">
+          
+              <h2 class="text-uppercase text-center mb-2" style="color:darkblue">Suppliers</h2><br>
+                <!-- Supplier Form -->
+              <form>
+                
+                <div data-mdb-input-init class="form-outline mb-2">
+                  <input type="text" id="form3Example3cg" class="form-control form-control-md"
+                   placeholder="Name" [(ngModel)]="supplier.name" [ngModelOptions]="{standalone:true}"/>
+                   <label class="form-label" for="form3Example1cg">Name</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-2">
+                    <input type="text" id="form3Example3cg" class="form-control form-control-md"
+                     placeholder="Contact Information" [(ngModel)]="supplier.contactInfo" [ngModelOptions]="{standalone:true}"/>
+                     <label class="form-label" for="form3Example1cg">Contact Information</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-2">
+                    <input type="text" id="form3Example1cg" class="form-control form-control-md" 
+                     placeholder="Rating" [(ngModel)]="supplier.rating" [ngModelOptions]="{standalone:true}"  />
+                    <label class="form-label" for="form3Example1cg">Rating</label>
+                </div>
+                
+                <!-- display a success message after registered -->
+              <!-- <label id="successMsg" *ngIf="status" style="background-color: aquamarine; color:green">Supplier Added</label> -->
+
+               <!-- submit button -->
+               <div class="d-flex justify-content-center">
+                <button type="submit" data-mdb-button-init
+                  data-mdb-ripple-init class="btn btn-success btn-block btn-md gradient-custom-4 text-body"
+                  (click)="insertSupplier()">Submit</button>
+              </div>
+
+              </form>
+            </div>
+        </div>
+    }
+      </div>
+    
+      </div>
+    </div>
+  </div>
+</div>
+</section>
