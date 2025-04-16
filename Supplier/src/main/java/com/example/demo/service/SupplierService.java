@@ -78,9 +78,7 @@ public class SupplierService {
 			return convertToDto(supplierEntity );
 		} else {
 			return null;
-		}
-		
-		
+		}	
 	}
 
 }
