@@ -93,12 +93,12 @@ export class OrderManagerComponent implements OnInit {
         if(this.updateId==-1){
           this.service.placeOrder(this.orderRequest).subscribe((result:OrderDTO) =>{
             if(result.orderId > 0){
+              alert('not added');
+            }else{
               this.status=true;
               alert('order added');
               this.loadOrders();//call function
-              this.resetForm();
-            }else{
-              alert('not added');
+              this.resetForm(); //call function
             } 
           }) 
         }else{
